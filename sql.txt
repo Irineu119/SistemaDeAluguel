@@ -1,0 +1,28 @@
+CREATE DATABASE Aluguel;
+USE Aluguel;
+
+
+CREATE TABLE Imovel (
+	id_imovel INT PRIMARY KEY AUTO_INCREMENT,
+	matricula INT UNIQUE NOT NULL,
+	tipo INT,
+    tamanho INT,
+    classificacao INT
+);
+
+CREATE TABLE Cliente (
+	id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+	CPF VARCHAR(255) UNIQUE NOT NULL,
+	nome VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Contrato (
+	id_contrato INT PRIMARY KEY AUTO_INCREMENT,
+    id_imovel INT NOT NULL,
+    id_cliente INT NOT NULL,
+    data_inicio_aluguel DATETIME NOT NULL,
+    data_fim_aluguel DATETIME,
+    valor FLOAT NOT NULL,
+    FOREIGN KEY(id_imovel) REFERENCES Imovel(id_imovel),
+    FOREIGN KEY(id_cliente) REFERENCES Cliente(id_cliente)
+);
