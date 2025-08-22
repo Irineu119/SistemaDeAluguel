@@ -12,6 +12,5 @@ public class App
         c.setCPF("111.335.689-13");
         c.setNome("Murilo");
         dao.cadastrarCliente(c);
-        System.out.printf("mako");
     }
 }
