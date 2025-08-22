@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class ClienteDAO extends BaseDAO {
     public void cadastrarCliente(Cliente c) {
-        String sql = "INSERT INTO Cliente(CPF, nome) values(?, ?)";
+        String sql = "INSERT INTO Cliente(CPF, nome) VALUES(?, ?)";
 
         try (Connection con = con(); PreparedStatement s = con.prepareStatement(sql))
         {
