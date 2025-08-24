@@ -25,7 +25,7 @@
 
 ## Instruções SQL
 
-Criação do schema e tabelas.
+Criação do banco e tabelas.
 ```SQL
 --- Criação do banco
 CREATE DATABASE Aluguel;
