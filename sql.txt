@@ -5,9 +5,7 @@ USE Aluguel;
 CREATE TABLE Imovel (
 	id_imovel INT PRIMARY KEY AUTO_INCREMENT,
 	matricula INT UNIQUE NOT NULL,
-	tipo INT,
-    tamanho INT,
-    classificacao INT
+    tamanho INT
 );
 
 CREATE TABLE Cliente (

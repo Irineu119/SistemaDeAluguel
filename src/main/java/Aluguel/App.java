@@ -1,16 +1,38 @@
 package Aluguel;
 
 import Aluguel.DAO.ClienteDAO;
+import Aluguel.DAO.ContratoDAO;
+import Aluguel.DAO.ImovelDAO;
 import Aluguel.entidade.Cliente;
+import Aluguel.entidade.Contrato;
+import Aluguel.entidade.Imovel;
+
+import java.util.List;
+import java.util.Scanner;
 
 public class App 
 {
+    static boolean quit = false;
+
     public static void main( String[] args )
     {
-        ClienteDAO dao = new ClienteDAO();
-        Cliente c = new Cliente();
-        c.setCPF("111.335.689-13");
-        c.setNome("Murilo");
-        dao.cadastrarCliente(c);
+        while (!quit) {
+            System.out.println("Escolha uma opção:");
+            System.out.print("1. Cadastrar imóvel.\n" +
+                             "2. Cadastrar cliente.\n" +
+                             "3. Cadastrar contrato.\n" +
+                             "4. Listar imóveis disponíveis para aluguel.\n" +
+                             "5. Listar contratos ativos.\n" +
+                             "6. Listar clientes com mais contratos.\n" +
+                             "7. Listar contratos expirando nos próximos 30 dias.\n" +
+                             "8. Sair.\n");
+
+            Scanner s = new Scanner(System.in);
+            int opcao = s.nextInt();
+            opcao -= '0';
+            switch (opcao) {
+
+            }
+        }
     }
 }

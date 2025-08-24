@@ -18,6 +18,6 @@ class ConnectionFactory {
     }
 
     public Connection get() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/Aluguel", "root", "univille");
+        return DriverManager.getConnection("jdbc:mysql://localhost:3306/Aluguel", "root", "Vinende20052905!");
     }
 }
