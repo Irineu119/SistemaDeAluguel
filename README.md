@@ -13,7 +13,7 @@
 | Item           | Valor     |
 |----------------|-----------|
 | Banco de Dados | MySQL     |
-| Schema         | meu_banco |
+| Banco          | Aluguel   |
 
 ## Diagrama de classe da UML
 
