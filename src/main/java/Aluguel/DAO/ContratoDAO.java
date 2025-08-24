@@ -18,6 +18,7 @@ public class ContratoDAO extends BaseDAO {
             s.setDate(4, new java.sql.Date(Timestamp.valueOf(c.getData_fim_aluguel()).getTime()));
             s.setFloat(5, c.getValor());
             s.execute();
+            System.out.println("Contrato cadastrado com sucesso.");
         }
         catch (SQLException e) {
             System.out.printf("Erro ao cadastrar contrato de imóvel com ID %d para cliente com ID %d.\n", c.getId_imovel(), c.getId_cliente());

@@ -12,6 +12,7 @@ public class ImovelDAO extends BaseDAO {
             s.setLong(1, i.getMatricula());
             s.setLong(2, i.getTamanho());
             s.execute();
+            System.out.println("Imóvel cadastrado com sucesso.");
         }
         catch (SQLException e) {
             System.out.printf("Erro ao cadastrar imóvel de matrícula %d.\n", i.getMatricula());

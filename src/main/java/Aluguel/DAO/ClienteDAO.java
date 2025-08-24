@@ -4,7 +4,6 @@ import Aluguel.entidade.Cliente;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -18,6 +17,7 @@ public class ClienteDAO extends BaseDAO {
             s.setString(1, c.getCPF());
             s.setString(2, c.getNome());
             s.execute();
+            System.out.println("Cliente cadastrado com sucesso.");
         }
         catch (SQLException e) {
             System.out.printf("Erro ao cadastrar cliente %s (%s).\n", c.getNome(), c.getCPF());

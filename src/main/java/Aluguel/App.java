@@ -7,7 +7,8 @@ import Aluguel.entidade.Cliente;
 import Aluguel.entidade.Contrato;
 import Aluguel.entidade.Imovel;
 
-import java.util.List;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class App 
@@ -84,14 +85,57 @@ public class App
     }
 
     public static void cadastrarImovel() {
+        Scanner s = new Scanner(System.in);
+        Imovel i = new Imovel();
+        System.out.print("Digite a matrícula do imóvel: ");
+        long matricula = s.nextLong();
+        i.setMatricula(matricula);
+        System.out.print("Digite o tamanho em m² do imóvel: ");
+        long tamanho = s.nextLong();
+        i.setTamanho(tamanho);
 
+        ImovelDAO dao = new ImovelDAO();
+        dao.cadastrarImovel(i);
     }
 
     public static void cadastrarCliente() {
+        Scanner s = new Scanner(System.in);
+        Cliente c = new Cliente();
+        System.out.print("Digite o nome do cliente: ");
+        String nome = s.nextLine();
+        c.setNome(nome);
+        System.out.print("Digite o CPF do cliente: ");
+        String cpf = s.nextLine();
+        c.setCPF(cpf);
 
+        ClienteDAO dao = new ClienteDAO();
+        dao.cadastrarCliente(c);
     }
 
     public static void cadastrarContrato() {
+        Scanner s = new Scanner(System.in);
+        Contrato c = new Contrato();
+        System.out.print("Digite o ID do imóvel: ");
+        long id_imovel = s.nextLong();
+        c.setId_imovel(id_imovel);
+        System.out.print("Digite o ID do cliente: ");
+        long id_cliente = s.nextLong();
+        c.setId_cliente(id_cliente);
+        System.out.print("Digite o valor: ");
+        float valor = s.nextFloat();
+        s.nextLine();
+        c.setValor(valor);
+        System.out.print("Digite a data de início (yyyy-MM-dd HH:mm): ");
+        String inicioStr = s.nextLine();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime inicio = LocalDateTime.parse(inicioStr, formatter);
+        c.setData_inicio_aluguel(inicio);
+        System.out.print("Digite a data do fim (yyyy-MM-dd HH:mm): ");
+        String fimStr = s.nextLine();
+        LocalDateTime fim = LocalDateTime.parse(fimStr, formatter);
+        c.setData_fim_aluguel(fim);
 
+        ContratoDAO dao = new ContratoDAO();
+        dao.cadastrarContrato(c);
     }
 }
