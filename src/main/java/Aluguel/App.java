@@ -29,10 +29,69 @@ public class App
 
             Scanner s = new Scanner(System.in);
             int opcao = s.nextInt();
-            opcao -= '0';
             switch (opcao) {
+                case 1:
+                    cadastrarImovel();
+                    break;
 
+                case 2:
+                    cadastrarCliente();
+                    break;
+
+                case 3:
+                    cadastrarContrato();
+                    break;
+
+                case 4:
+                    ImovelDAO dao = new ImovelDAO();
+                    dao.listarImoveisDisponiveis();
+                    break;
+
+                case 5:
+                    ContratoDAO dao2 = new ContratoDAO();
+                    dao2.listarContratosAtivos();
+                    break;
+
+                case 6:
+                    ClienteDAO dao3 = new ClienteDAO();
+                    dao3.listarClientesComMaisContratos(3);
+                    break;
+
+                case 7:
+                    ContratoDAO dao4 = new ContratoDAO();
+                    dao4.listarContratosExpirandoEm30Dias();
+                    break;
+
+                case 8:
+                    quit = true;
+                    break;
+
+                default:
+                    System.out.println("opção inválida.");
+                    break;
             }
+
+            if (!quit) {
+                try {
+                    Thread.currentThread().sleep(2500);
+                }
+                catch (Exception e) {
+
+                }
+            }
+            System.out.print("\n");
         }
+    }
+
+    public static void cadastrarImovel() {
+
+    }
+
+    public static void cadastrarCliente() {
+
+    }
+
+    public static void cadastrarContrato() {
+
     }
 }
